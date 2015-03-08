@@ -21,37 +21,28 @@
    </extension>
    <extension
          point="org.eclipse.ui.views">
-      <view
-            name="View"
-            class="de.hsa.hcigenerator.View"
-            id="de.hsa.HCIGenerator.view">
+         
+       <view
+       		name="View2 test2"
+       		allowMultiple="true"
+            class="de.hsa.hcigenerator.View2"
+            id="de.hsa.HCIGenerator.view2"
+            >
       </view>
+         
+      <view
+            name="View1 test"
+            allowMultiple="true"
+            class="de.hsa.hcigenerator.View1"
+            id="de.hsa.HCIGenerator.view1">
+      </view>
+
+
    </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="*">
-         <view
-               standalone="true"
-               minimized="false"
-               relative="org.eclipse.ui.editorss"
-               relationship="left"
-               id="de.hsa.HCIGenerator.view">
-         </view>
-      </perspectiveExtension>
-   </extension>
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="menu:org.eclipse.ui.main.menu">
-         <menu
-               label="File">
-            <command
-                  commandId="org.eclipse.ui.file.exit"
-                  label="Exit">
-            </command>
-         </menu>
-      </menuContribution>
-   </extension>
+   
+   
+   
+   
+
 
 </plugin>
