@@ -1,4 +1,4 @@
-package de.hsa.hcigenerator;
+package de.hsa.hcigenerator.gui;
 
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.ICoolBarManager;
@@ -15,6 +15,9 @@ import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.jface.action.IAction;
+
+import de.hsa.hcigenerator.gui.wizard.NewProjectWizard;
 
 /**
  * An action bar advisor is responsible for creating, adding, and disposing of
@@ -31,8 +34,11 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	private IWorkbenchAction exitAction;
 	private IWorkbenchAction aboutAction;
 	private IWorkbenchAction newWindowAction;
+	private IAction deleteAction;
 
-	// private OpenViewAction openViewAction;
+	
+
+	//private OpenViewAction openViewAction;
 	// private Action messagePopupAction;
 
 	public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
@@ -62,6 +68,9 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 
 		messagePopupAction = new MessagePopupAction("Open Message", window);
 		register(messagePopupAction);*/
+		
+	
+
 	}
 	
 	
@@ -89,6 +98,10 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	    protected void fillCoolBar(ICoolBarManager coolBar) {
 	        IToolBarManager toolbar = new ToolBarManager(SWT.FLAT | SWT.RIGHT);
 	        coolBar.add(new ToolBarContributionItem(toolbar, "main"));   
+	  
+	        
+	
+	
 	        //toolbar.add(openViewAction);
 	        //toolbar.add(messagePopupAction);
 	    }

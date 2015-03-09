@@ -1,8 +1,11 @@
-package de.hsa.hcigenerator;
+package de.hsa.hcigenerator.gui;
 
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
+
+import de.hsa.hcigenerator.gui.views.View1;
+import de.hsa.hcigenerator.gui.views.View2;
 
 public class Perspective implements IPerspectiveFactory {
 

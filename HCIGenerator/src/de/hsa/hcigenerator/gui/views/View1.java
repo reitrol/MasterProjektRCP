@@ -1,20 +1,12 @@
-package de.hsa.hcigenerator;
+package de.hsa.hcigenerator.gui.views;
 
-import org.eclipse.jface.viewers.IStructuredContentProvider;
-import org.eclipse.jface.viewers.ITableLabelProvider;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.ISharedImages;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
-public class View2 extends ViewPart {
+public class View1 extends ViewPart {
 	
-	public static final String ID = "de.hsa.HCIGenerator.view2";
+	public static final String ID = "de.hsa.HCIGenerator.view1";
 
 	private TableViewer viewer;
 
@@ -25,7 +17,7 @@ public class View2 extends ViewPart {
 	 * or ignore it and always show the same content (like Task List, for
 	 * example).
 	 */
-/*	class ViewContentProvider implements IStructuredContentProvider {
+	/*class ViewContentProvider implements IStructuredContentProvider {
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
 		}
 
@@ -61,12 +53,16 @@ public class View2 extends ViewPart {
 	 * it.
 	 */
 	public void createPartControl(Composite parent) {
-/*		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
+		/*viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
 		viewer.setLabelProvider(new ViewLabelProvider());
 		// Provide the input to the ContentProvider
 		viewer.setInput(new String[] {"One", "Two", "Three"});*/
+		
+		
+		
+		
 	}
 
 	/**
@@ -75,5 +71,4 @@ public class View2 extends ViewPart {
 	public void setFocus() {
 		//viewer.getControl().setFocus();
 	}
-
 }

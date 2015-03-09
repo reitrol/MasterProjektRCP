@@ -15,7 +15,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="Perspective"
-            class="de.hsa.hcigenerator.Perspective"
+            class="de.hsa.hcigenerator.gui.Perspective"
             id="de.hsa.HCIGenerator.perspective">
       </perspective>
    </extension>
@@ -25,7 +25,7 @@
        <view
        		name="View2"
        		allowMultiple="true"
-            class="de.hsa.hcigenerator.View2"
+            class="de.hsa.hcigenerator.gui.views.View2"
             id="de.hsa.HCIGenerator.view2"
             >
       </view>
@@ -33,9 +33,13 @@
       <view
             name="View1"
             allowMultiple="true"
-            class="de.hsa.hcigenerator.View1"
+            class="de.hsa.hcigenerator.gui.views.View1"
             id="de.hsa.HCIGenerator.view1">
       </view>
 
    </extension>
+   
+   
+   
+
 </plugin>
