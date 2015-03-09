@@ -17,7 +17,9 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.actions.NewWizardAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.wizard.WizardDialog;
 
 import de.hsa.hcigenerator.gui.wizard.NewProjectWizard;
@@ -76,6 +78,11 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		
 		
 		
+		
+		ImageDescriptor quitActionImage = AbstractUIPlugin.imageDescriptorFromPlugin("de.hsa.HCIGenerator", "icons/alt_window_16.gif" );
+		
+		
+		// registers a new action with own form
 		wizardAction = new Action() {
 
 		      public void run() {
@@ -84,9 +91,10 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		        dlg.open();
 		      }
 		    };
-		    wizardAction.setText( "Open wizard" );
-		    wizardAction.setId( "org.eclipse.rap.demo.wizard" );
-		    //wizardAction.setImageDescriptor( wizardActionImage );
+		    //wizardAction.setText( "Create new Project" );
+		    wizardAction.setId( "de.hsa.hcigenerator.wizard.newproject" );
+		    
+		    wizardAction.setImageDescriptor( quitActionImage );
 		    register( wizardAction );
 		
 		
@@ -127,7 +135,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	        coolBar.add(new ToolBarContributionItem(toolbar, "main"));   
 	  
 	        
-	        toolbar.add( wizardAction );
+	        toolbar.add(wizardAction);
 	
 	        //toolbar.add(openViewAction);
 	        //toolbar.add(messagePopupAction);

@@ -12,7 +12,7 @@ public class NewProjectWizardPage extends WizardPage {
 
 	protected NewProjectWizardPage(String pageName) {
 		super(pageName);
-		setTitle("Wizard Page 1");
+		setTitle(pageName);
         setDescription("Example wizard page");
 	}
 
