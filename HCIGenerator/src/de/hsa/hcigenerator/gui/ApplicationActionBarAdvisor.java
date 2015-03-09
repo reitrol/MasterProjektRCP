@@ -1,5 +1,6 @@
 package de.hsa.hcigenerator.gui;
 
+import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.ICoolBarManager;
 import org.eclipse.jface.action.IMenuManager;
@@ -13,9 +14,11 @@ import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
+import org.eclipse.ui.actions.NewWizardAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.wizard.WizardDialog;
 
 import de.hsa.hcigenerator.gui.wizard.NewProjectWizard;
 
@@ -36,6 +39,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	private IWorkbenchAction newWindowAction;
 	private IAction deleteAction;
 
+	
+	private Action wizardAction;
 	
 
 	//private OpenViewAction openViewAction;
@@ -69,6 +74,22 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		messagePopupAction = new MessagePopupAction("Open Message", window);
 		register(messagePopupAction);*/
 		
+		
+		
+		wizardAction = new Action() {
+
+		      public void run() {
+		        NewProjectWizard wizard = new NewProjectWizard();
+		        WizardDialog dlg = new WizardDialog(window.getShell(), wizard);
+		        dlg.open();
+		      }
+		    };
+		    wizardAction.setText( "Open wizard" );
+		    wizardAction.setId( "org.eclipse.rap.demo.wizard" );
+		    //wizardAction.setImageDescriptor( wizardActionImage );
+		    register( wizardAction );
+		
+		
 	
 
 	}
@@ -91,6 +112,12 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	        fileMenu.add(new Separator());
 	        fileMenu.add(exitAction);
 	        
+	        
+	        NewProjectWizard wizard = new NewProjectWizard();
+	        //WizardDialog dialog = new WizardDialog(parentShell, wizard);
+	        //dialog.open();
+	        
+	        
 	        // Help
 	        helpMenu.add(aboutAction);
 	    }
@@ -100,7 +127,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	        coolBar.add(new ToolBarContributionItem(toolbar, "main"));   
 	  
 	        
-	
+	        toolbar.add( wizardAction );
 	
 	        //toolbar.add(openViewAction);
 	        //toolbar.add(messagePopupAction);
