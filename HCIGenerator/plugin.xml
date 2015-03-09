@@ -23,7 +23,7 @@
          point="org.eclipse.ui.views">
          
        <view
-       		name="View2 test2"
+       		name="View2"
        		allowMultiple="true"
             class="de.hsa.hcigenerator.View2"
             id="de.hsa.HCIGenerator.view2"
@@ -31,7 +31,7 @@
       </view>
          
       <view
-            name="View1 test"
+            name="View1"
             allowMultiple="true"
             class="de.hsa.hcigenerator.View1"
             id="de.hsa.HCIGenerator.view1">
